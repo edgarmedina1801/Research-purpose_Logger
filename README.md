@@ -18,17 +18,17 @@ Configuration files are not updated (reloaded) automatically, for consecutive ex
 Correct form...
 
 ```
-gpu 0: $ python training_net.py # Config files: the <b>fisrt<b> modification is done and the <b>first<b> configuration is saved
-gpu 1: $ python training_net.py # Config files: the <b>second<b> modification is done and the <b>second<b> configuration is saved
-gpu 1: $ python training_net.py # Config files: the <b>third<b> modification is done and the <b>third<b> configuration is saved
-gpu 1: $ python training_net.py # Config files: the <b>fourth<b> modification is done and the <b>fourth<b> configuration is saved
+gpu 0: $ python training_net.py # Config files: the <b>fisrt</b> modification is done and the <b>first</b> configuration is saved
+gpu 1: $ python training_net.py # Config files: the <b>second</b> modification is done and the <b>second</b> configuration is saved
+gpu 1: $ python training_net.py # Config files: the <b>third</b> modification is done and the <b>third</b> configuration is saved
+gpu 1: $ python training_net.py # Config files: the <b>fourth</b> modification is done and the <b>fourth</b> configuration is saved
 ```
 
 Incorrect form...
 
 ```
-gpu 0: [1] run training_net.py # Config files: the <b>fisrt<b> modification is done and the <b>first<b> configuration is saved
-gpu 1: [2] run training_net.py # Config files: the <b>second<b> modification is done and the <b>first<b> configuration is saved
-gpu 1: [3] run training_net.py # Config files: the <b>third<b> modification is done and the <b>first<b> configuration is saved
-gpu 1: [4] run training_net.py # Config files: the <b>fourth<b> modification is done and the <b>first<b> configuration is saved
+gpu 0: [1] run training_net.py # Config files: the <b>fisrt</b> modification is done and the <b>first</b> configuration is saved
+gpu 1: [2] run training_net.py # Config files: the <b>second</b> modification is done and the <b>first</b> configuration is saved
+gpu 1: [3] run training_net.py # Config files: the <b>third</b> modification is done and the <b>first</b> configuration is saved
+gpu 1: [4] run training_net.py # Config files: the <b>fourth</b> modification is done and the <b>first</b> configuration is saved
 ```
