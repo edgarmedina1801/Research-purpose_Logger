@@ -10,7 +10,7 @@ import numpy as np
 ####### General Comment section #######
 ExperimentName = ''
 ShortName = '' # short name in the log file: ShortName-Time.log
-configpath = ['config_classification.py'] # Put here all configuration files to be saved
+configpath = ['configuration/config1.py','configuration/config2.py'] # Put here all configuration files to be saved, recommended to load at the beginning.
 dataset_name = '' # Database Name, could be used inside config files
 ####### work only for one space texts #######
 output_path = 'logs/'
