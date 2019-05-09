@@ -18,17 +18,17 @@ Configuration files are not updated (reloaded) automatically, for consecutive ex
 Correct form...
 
 ```
-gpu 0: $ python training_net.py # Config files: the fisrt modification *is done* and the first configuration *is saved*
-gpu 1: $ python training_net.py # Config files: the second modification *is done* and the second configuration *is saved*
-gpu 1: $ python training_net.py # Config files: the third modification *is done* and the third configuration *is saved*
-gpu 1: $ python training_net.py # Config files: the fourth modification *is done* and the fourth configuration *is saved*
+gpu 0: $ python training_net.py # Config files: the **fisrt** modification is done and the **first** configuration is saved
+gpu 1: $ python training_net.py # Config files: the **second** modification is done and the **second** configuration is saved
+gpu 1: $ python training_net.py # Config files: the **third** modification is done and the **third** configuration is saved
+gpu 1: $ python training_net.py # Config files: the **fourth** modification is done and the **fourth** configuration is saved
 ```
 
 Incorrect form...
 
 ```
-gpu 0: [1] run training_net.py # Config files: the fisrt modification *is done* and the first configuration *is saved*
-gpu 1: [2] run training_net.py # Config files: the second modification *is done* and the first configuration *is saved*
-gpu 1: [3] run training_net.py # Config files: the third modification *is done* and the first configuration *is saved*
-gpu 1: [4] run training_net.py # Config files: the fourth modification *is done* and the first configuration *is saved*
+gpu 0: [1] run training_net.py # Config files: the **fisrt** modification is done and the **first** configuration is saved
+gpu 1: [2] run training_net.py # Config files: the **second** modification is done and the **first** configuration is saved
+gpu 1: [3] run training_net.py # Config files: the **third** modification is done and the **first** configuration is saved
+gpu 1: [4] run training_net.py # Config files: the **fourth** modification is done and the **first** configuration is saved
 ```
