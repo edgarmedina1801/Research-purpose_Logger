@@ -1,5 +1,6 @@
 # Research-purpose_Logger
-This is a research-purpose logger that helps on the organization of codes for several training and parameters. I employed this logger in at least 6 private projects and 2 academic projects.
+This is a research-purpose logger that helps in the code and config files organization, and massive result analysis for many abstraction level. Mainly, where large and exhausting experiments and/or manual hyperparameters selection are performed. I employed this logger in at least 6 private projects and 2 academic projects.
+
 
 ## Usage
 
