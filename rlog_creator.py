@@ -10,7 +10,7 @@ import numpy as np
 ####### General Comment section #######
 ExperimentName = ''
 ShortName = '' # short name in the log file: ShortName-Time.log
-configpath = ['configuration/config1.py','configuration/config2.py'] # Put here all configuration files to be saved, recommended to load at the beginning.
+configpath = ['config_classification.py'] # Put here all configuration files to be saved
 dataset_name = '' # Database Name, could be used inside config files
 ####### work only for one space texts #######
 output_path = 'logs/'
@@ -19,22 +19,36 @@ GeneralComments = ''
 ############################################################################################################
 ############################################## END USER SPACE ##############################################
 ############################################################################################################
+Default_Network_files = "Networks/"
 
 server = socket.gethostname()
 user = os.environ['USER']
 date = datetime.datetime.now()
 try:configpath
 except:configpath = '';print(colored('Warning: A configuration files (variable name: configpath) was not set for log file generation', 'red'))
+def load_net_py(config_text_version):
+    start = config_text_version.find("architecture")+len("architecture")
+    end = config_text_version[start:].find("\n")-2
+    start += config_text_version[start:start+end].find("=")+1
+    architecture = config_text_version[start:start+end].replace("'","")
+    architecture = architecture.replace('"','')
+    architecture = architecture.replace(' ','')
+    name_arch = Default_Network_files+architecture+".py"
+    with open(name_arch, 'r') as arch:
+        config_text=arch.read()
+    return config_text_version+"\n\n\n\n"+name_arch+'\n\n'+config_text+'\n'
 if type(configpath)==str and configpath!='':
     with open(configpath, 'r') as configurations:
         config_text_version=configurations.read()
     config_text_version = configpath+'\n'+config_text_version
+    if "architecture" in config_text_version: config_text_version = load_net_py(config_text_version)
 elif type(configpath)==list:
     config_text_version = '\n'
     for conf in configpath:
         with open(conf, 'r') as configurations:
             config_text=configurations.read()
         config_text_version = config_text_version+conf+'\n'+config_text+'\n'
+        if "architecture" in config_text_version: config_text_version = load_net_py(config_text_version)
 else:
     config_text_version=''
 

@@ -2,8 +2,21 @@
 This is a research-purpose logger that helps in the code and config files organization, and massive result analysis for many abstraction level. Mainly, where large and exhausting experiments and/or manual hyperparameters selection are performed. I employed this logger in at least 6 private projects and 2 academic projects.
 
 
-## Usage
+## Update 1.1.
+Changes in the keyword "architecture" (if any). Inside the config files to be saved, the logger will open the file with the same architecture name and will be saved below the config file in the experiment.log. the following example explains a bit better this:
+```
+log information: time processing, comments and other meta data used in architecture search.
+config1.py
+    dataset = "ModelNet40_2048"
+    GeneralComments = "   -  Simple test "
+    architecture = 'Net4'
+    name_file = 'Aug-Net4'
 
+Networks/Net4.py
+    all the code for the architecture...
+```
+
+## Usage
 This code is flexible, some variables are easy to overwrite, in some cases config log or csv are needed, this type of files are generated automatically if dicts are employed.
 
 
