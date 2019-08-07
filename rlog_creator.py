@@ -10,7 +10,7 @@ import numpy as np
 ####### General Comment section #######
 ExperimentName = ''
 ShortName = '' # short name in the log file: ShortName-Time.log
-configpath = ['config_classification.py'] # Put here all configuration files to be saved
+configpath = ['configuration/config1.py','configuration/config2.py'] # Put here all configuration files to be saved, recommended to load at the beginning.
 dataset_name = '' # Database Name, could be used inside config files
 ####### work only for one space texts #######
 output_path = 'logs/'
@@ -37,18 +37,24 @@ def load_net_py(config_text_version):
     with open(name_arch, 'r') as arch:
         config_text=arch.read()
     return config_text_version+"\n\n\n\n"+name_arch+'\n\n'+config_text+'\n'
+    
 if type(configpath)==str and configpath!='':
     with open(configpath, 'r') as configurations:
         config_text_version=configurations.read()
     config_text_version = configpath+'\n'+config_text_version
     if "architecture" in config_text_version: config_text_version = load_net_py(config_text_version)
 elif type(configpath)==list:
-    config_text_version = '\n'
+    config_text_version = []
     for conf in configpath:
+        config_text_version.append('\n')
         with open(conf, 'r') as configurations:
             config_text=configurations.read()
-        config_text_version = config_text_version+conf+'\n'+config_text+'\n'
-        if "architecture" in config_text_version: config_text_version = load_net_py(config_text_version)
+        config_text_version[-1] = config_text_version[-1]+conf+'\n'+config_text+'\n'
+        if "architecture" in config_text_version[-1]: config_text_version[-1] = load_net_py(config_text_version[-1])
+    temp_text = ""
+    for text in config_text_version:
+        temp_text = temp_text+text
+    config_text_version = temp_text
 else:
     config_text_version=''
 
